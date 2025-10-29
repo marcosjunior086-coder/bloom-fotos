@@ -1,88 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloom Agency - Galeria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imagens Bloom RAV</title>
   <style>
     body {
-      background-color: #000;
+      font-family: sans-serif;
+      background: #f8f9fa;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
+      gap: 24px;
+      padding: 40px;
     }
-
-    .carousel {
-      position: relative;
-      width: 320px;
-      height: 320px;
-    }
-
-    .carousel img {
-      position: absolute;
-      width: 100%;
+    img {
+      width: 200px;
       height: auto;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      filter: drop-shadow(0px 0px 15px rgba(128, 0, 255, 0.3));
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    .carousel img.active {
-      opacity: 1;
+    h2 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 4px;
     }
-
-    /* Setas laterais */
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #9f7aea;
-      cursor: pointer;
-      user-select: none;
-      z-index: 10;
-    }
-
-    .arrow.left { left: -40px; }
-    .arrow.right { right: -40px; }
-
   </style>
 </head>
 <body>
 
-  <div class="carousel">
-    <span class="arrow left" onclick="prevImage()">&#10094;</span>
-    <img src="bloom1.svg" alt="Bloom 1" class="active">
-    <img src="bloom2.svg" alt="Bloom 2">
-    <img src="bloom3.svg" alt="Bloom 3">
-    <span class="arrow right" onclick="nextImage()">&#10095;</span>
+  <div>
+    <h2>Bloom RAV</h2>
+    <img src="https://raw.githubusercontent.com/seuusuario/bloom-rav/main/bloom-rav.svg" alt="Bloom RAV Logo" />
   </div>
 
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-
-    function showImage(index) {
-      images.forEach(img => img.classList.remove('active'));
-      images[index].classList.add('active');
-    }
-
-    function nextImage() {
-      current = (current + 1) % images.length;
-      showImage(current);
-    }
-
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    }
-
-    // Troca automática a cada 5 segundos
-    setInterval(nextImage, 5000);
-  </script>
+  <!-- se tiver mais imagens, copie esse bloco abaixo -->
+  <!--
+  <div>
+    <h2>Nome da imagem</h2>
+    <img src="https://raw.githubusercontent.com/seuusuario/bloom-rav/main/outra-imagem.svg" alt="Outra imagem" />
+  </div>
+  -->
 
 </body>
 </html>
